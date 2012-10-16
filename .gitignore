@@ -15,3 +15,7 @@ sitemap.xml
 sitemap.xml.gz
 readme.html
 license.txt
+index.php
+wp-content/index.php
+wp-content/plugins/index.php
+wp-content/themes/index.php
