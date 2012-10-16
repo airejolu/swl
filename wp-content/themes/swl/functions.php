@@ -34,12 +34,12 @@ function swl_setup() {
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
+	require( get_template_directory() . '/inc/tweaks.php' );
 
 	/**
 	 * Custom Theme Options
 	 */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
 
 	/**
 	 * Make theme available for translation
@@ -95,9 +95,28 @@ add_action( 'widgets_init', 'swl_widgets_init' );
  * Enqueue scripts and styles
  */
 function swl_scripts() {
+
+	//get foundation main styles
+	wp_enqueue_style( 'zurb_foundations', get_template_directory_uri() .'/css/foundation.min.css', true );
+
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	
+	//get theme styles
+	wp_enqueue_style( 'swl_style', get_template_directory_uri() .'/css/site.css', true );
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+	
+	// placeholder js	
+	wp_enqueue_script( 'placeholder-js', get_template_directory_uri() . '/js/jquery.placeholder.js', array( 'jquery' ), '20120801', true );		
+	
+	// modernizer	
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.foundation.js', array( 'jquery' ), '20120801', true );	
+	
+	//zurb foundation js
+	wp_enqueue_script( 'zurb-js', get_template_directory_uri() . '/js/foundation.min.js', array( 'jquery' ), '20120801', true );
+	
+	// custom theme js	
+	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '20120801', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
