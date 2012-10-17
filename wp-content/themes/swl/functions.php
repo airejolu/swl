@@ -100,9 +100,6 @@ function swl_scripts() {
 	wp_enqueue_style( 'zurb_foundations', get_template_directory_uri() .'/css/foundation.min.css', true );
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	
-	//get theme styles
-	wp_enqueue_style( 'swl_style', get_template_directory_uri() .'/css/site.css', true );
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 	

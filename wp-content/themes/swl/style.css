@@ -9,3 +9,19 @@ License: GNU General Public License
 License URI: license.txt
 Tags:
 */
+@font-face {
+  font-family: 'Nexa Light';
+  src: url('css/webfonts/nexa-light.eot');
+  src: url('css/webfonts/nexa-light.eot?#iefix') format('embedded-opentype'), url('css/webfonts/nexa-light.woff') format('woff'), url('css/webfonts/nexa-light.ttf') format('truetype'), url('css/webfonts/nexa-light.svg#ywftsvg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}

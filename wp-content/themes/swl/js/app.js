@@ -29,7 +29,7 @@
   
     $("#featured").orbit();
   
-
+    
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
   // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
   // $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'both'});
