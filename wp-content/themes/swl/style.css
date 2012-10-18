@@ -42,12 +42,45 @@ a:hover {
 }
 /*---------------------------------------------------------- Header/Top Nav */
 #masthead {
-  margin-bottom: 40px;
-  padding: 40px 0;
+  margin-bottom: 80px;
+  height: 200px;
   border-bottom: 1px solid #e1e1e1;
+}
+#masthead nav {
+  margin-top: 70px;
+}
+#masthead .nav-bar {
+  float: right;
+  background: transparent;
+}
+#masthead .nav-bar li {
+  padding: 0 0 0 20px;
+  border: none;
+}
+#masthead .nav-bar li a {
+  padding: 0;
+  border-bottom: 1px solid transparent;
+  color: #565656;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+}
+#masthead .nav-bar li a:hover {
+  color: #6ccfd4;
+  border-bottom: 1px solid #e1e1e1;
+}
+#masthead .nav-bar li:hover {
+  background: transparent;
+}
+/*---------------------------------------------------------- Sidebar */
+aside h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 /*---------------------------------------------------------- Post stuff */
 article header .entry-title {
+  margin: 0 0 30px 0;
   color: #565656;
 }
 article header .entry-title a {
@@ -133,6 +166,9 @@ article .featured-img img {
 }
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
+  #masthead .menu {
+    display: none;
+  }
   article .post-meta .author {
     float: left;
   }

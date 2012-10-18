@@ -78,10 +78,62 @@ a {
 /*---------------------------------------------------------- Header/Top Nav */
 
 #masthead {
-	margin-bottom: 40px;
-	padding: 40px 0;
-	.border-bottom;
+	margin-bottom: 80px;
+	height: 200px;
+	
+		nav {
+			margin-top: 70px;
+		}
+	
+		.nav-bar {
+			float: right;
+			background: transparent;
+			
+				li {
+					padding: 0 0 0 20px;
+					border: none;				
+					
+						a {
+							padding: 0;
+							border-bottom: 1px solid transparent;
+							color: @grey;
+							text-transform: uppercase;
+							font-size: 28px;
+							font-family: @webfont;
+							
+							&:hover {
+								color: @blue;
+								.border-bottom;
+							}
+							
+						}
+			
+					&:hover {
+						background: transparent;
+					}
+					
+				}
+			
+		}
+	.border-bottom;//nav-bar
+	
+	
 }
+
+
+
+/*---------------------------------------------------------- Sidebar */
+
+aside {
+	
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 18px;
+	}
+	
+}
+
 
 
 /*---------------------------------------------------------- Post stuff */
@@ -89,7 +141,9 @@ a {
 article {
 
 	header {
+	
 		.entry-title {
+			margin: 0 0 30px 0;
 			color: @grey;
 			
 				a {
@@ -234,6 +288,12 @@ article {
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
 
+	#masthead {
+		.menu {
+			display: none;
+		}
+	}
+
 	article .post-meta {
 	
 		.author {
@@ -251,7 +311,9 @@ article {
 		
 	} //article/post-meta
 
-}
+}// 767px
+
+
 
 .clearfix:after {
 	display: block;
