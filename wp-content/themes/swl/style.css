@@ -9,19 +9,155 @@ License: GNU General Public License
 License URI: license.txt
 Tags:
 */
+/*---------------------------------------------------------- Main Structure */
 @font-face {
+  font-weight: normal;
+  font-style: normal;
   font-family: 'Nexa Light';
   src: url('css/webfonts/nexa-light.eot');
   src: url('css/webfonts/nexa-light.eot?#iefix') format('embedded-opentype'), url('css/webfonts/nexa-light.woff') format('woff'), url('css/webfonts/nexa-light.ttf') format('truetype'), url('css/webfonts/nexa-light.svg#ywftsvg') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
-  font-weight: 300;
   text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
+a {
+  color: #6ccfd4;
+}
+a:hover {
+  color: rgba(108, 207, 212, 0.5);
+}
+.assistive-text {
+  display: none;
+}
+/*---------------------------------------------------------- Main Structure */
+#secondary {
+  padding-left: 12%;
+  border-left: 1px solid #e1e1e1;
+}
+/*---------------------------------------------------------- Header/Top Nav */
+#masthead {
+  margin-bottom: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+/*---------------------------------------------------------- Post stuff */
+article header .entry-title {
+  color: #565656;
+}
+article header .entry-title a {
+  color: #565656;
+}
+article header .entry-title a:hover {
+  color: #6ccfd4;
+}
+article .post-meta .author {
+  margin-bottom: 20px;
+}
+article .post-meta .author-img {
+  float: left;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+}
+article .post-meta .author-name {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 45%;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 1.2;
+  border-bottom: 1px solid #e1e1e1;
+}
+article .post-meta .the-cat ul {
+  list-style: none;
+  list-style-position: inside;
+}
+article .post-meta .the-cat ul li {
+  margin-bottom: 1px;
+}
+article .post-meta .the-cat ul li a {
+  display: block;
+  padding: 5px 0;
+  background: #faf398;
+  color: #565656;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  opacity: 1;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+article .post-meta .the-cat ul li a:hover {
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+  -khtml-opacity: 0.4;
+}
+article .post-meta time {
+  color: #999999;
+  font-size: 12px;
+}
+article .featured-img {
+  margin-bottom: 20px;
+}
+article .featured-img img {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/*------------------------------------- Mixens */
+/*------------------------------------- extra stuf */
+/* Very large display targeting */
+@media only screen and (min-width: 1441px) {
+  
+}
+/* Medium display targeting */
+@media only screen and (max-width: 1279px) and (min-width: 768px) {
+  
+}
+/* Small display targeting */
+@media only screen and (max-width: 767px) {
+  article .post-meta .author {
+    float: left;
+  }
+  article .post-meta .author-name {
+    float: left;
+    margin-left: 10px;
+    width: auto;
+  }
+  article .post-meta .the-cat {
+    float: left;
+  }
+}
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  content: " ";
+  font-size: 0;
+}
+* html .clearfix {
+  zoom: 1;
+}
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1;
+}
+/* IE7 */

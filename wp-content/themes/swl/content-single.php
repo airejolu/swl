@@ -6,13 +6,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+	<hgroup class="entry-header">
+	
+		<h2 class="entry-title">
+			<?php the_title(); ?>
+		</h2>
 
 		<div class="entry-meta">
 			<?php swl_posted_on(); ?>
 		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+		
+	</hgroup><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
