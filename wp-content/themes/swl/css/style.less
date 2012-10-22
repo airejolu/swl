@@ -75,14 +75,50 @@ a {
 }
 
 
+#main {
+
+}
+
+
 /*---------------------------------------------------------- Header/Top Nav */
 
 #masthead {
-	margin-bottom: 80px;
-	height: 200px;
+	margin-bottom: 40px;
+	background: url(images/bg.jpg) top center no-repeat;
+	
+	.site-title {
+		margin: 50px 0 20px;
+		padding: 0;
+		.animate (all, .25s);
+		.opacity(1);
+		
+			&:hover {
+				.opacity(0.4);
+			}
+		}//site-title
+		
+		.menu-toggle {
+			color: #fff;
+			font-size: 16px;
+			background: #303030;
+			padding: 20px 0 20px 10px;
+		}
+		
+		.menu-stripe {
+			display: block;
+			width: 18px;
+			height: 2px;
+			background-color: #fff;
+			-webkit-border-radius: 1px;
+			-moz-border-radius: 1px;
+			border-radius: 1px;
+			-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+		}
 	
 		nav {
-			margin-top: 70px;
+			margin-top: 97px;
 		}
 	
 		.nav-bar {
@@ -90,8 +126,11 @@ a {
 			background: transparent;
 			
 				li {
-					padding: 0 0 0 20px;
-					border: none;				
+					padding: 0 0 0 40px;
+					border: none;
+					-webkit-box-shadow: none;
+					-moz-box-shadow: none;
+					box-shadow: none;		
 					
 						a {
 							padding: 0;
@@ -102,9 +141,12 @@ a {
 							font-family: @webfont;
 							
 							&:hover {
+								padding: 0 0 5px;
+								border-color: @blue;
 								color: @blue;
 								.border-bottom;
 							}
+							.animate (all, .25s);
 							
 						}
 			
@@ -114,9 +156,38 @@ a {
 					
 				}
 			
+		}//navbar
+		
+		#secondary-nav {
+			float: right;
+			
+				li {
+					margin: 0 16px 0 0;
+					padding-left: 15px;
+					background: url(images/vert-line.png) left center no-repeat;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					font-size: 14px;
+					
+						&:last-child {
+							margin-right: 0;
+						}
+					
+						&.blog {
+							color: @grey;
+							font-style: italic;
+							background: none;
+							font-weight: 700;
+						}
+						
+						
+						a {
+							font-family: @webfont;
+						}
+						
+				}//li
+			
 		}
-	.border-bottom;//nav-bar
-	
 	
 }
 
@@ -139,6 +210,7 @@ aside {
 /*---------------------------------------------------------- Post stuff */
 
 article {
+
 
 	header {
 	
@@ -227,6 +299,17 @@ article {
 				.border-radius;
 			}
 	}
+	
+	
+	.entry-content {
+		margin-bottom: 40px;
+	}//entry-content
+	
+	footer.entry-meta {
+		.border-top;
+		padding: 20px 0;
+		margin-bottom: 40px;
+	}
 
 } //article 
 
@@ -251,10 +334,10 @@ article {
 }
 
 .animate (@this: all, @time: .25s) {
-	-webkit-transition: @this @time;
-	-moz-transition: @this @time;
-	-o-transition: @this @time;
-	transition: @this @time;
+	-webkit-transition: @this @time ease-in-out;
+	-moz-transition: @this @time ease-in-out;
+	-o-transition: @this @time ease-in-out;
+	transition: @this @time ease-in-out;
 }
 
 .border-top (@width: 1px) {
@@ -280,19 +363,47 @@ article {
 /* Very large display targeting */
 @media only screen and (min-width: 1441px) { 
 	
-}
+}//large display
+
 /* Medium display targeting */
-@media only screen and (max-width: 1279px) and (min-width: 768px) { 
+@media only screen and (max-width: 1048px) and (min-width: 768px) { 
+
+
+	#masthead .nav-bar li {
+		padding-left: 15px;
+		
+			a {
+				font-size: 28px;
+			}
+	}
 	
-}
+}//medium
+
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
+
+	.container {
+		padding: 20px;
+	}
 
 	#masthead {
 		.menu {
 			display: none;
 		}
-	}
+		
+		nav {
+			margin-top: 0;
+		}
+		
+		.nav-bar {
+			float: none;
+			
+				li {
+					padding-left: 0;
+				}
+		}
+		
+	}//masthead
 
 	article .post-meta {
 	

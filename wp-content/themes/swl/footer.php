@@ -9,8 +9,7 @@
  */
 ?>
 
-		</div><!-- #main .site-main -->
-	</div><!--/row -->
+	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="row">

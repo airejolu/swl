@@ -42,20 +42,56 @@ a:hover {
 }
 /*---------------------------------------------------------- Header/Top Nav */
 #masthead {
-  margin-bottom: 80px;
-  height: 200px;
-  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 40px;
+  background: url(images/bg.jpg) top center no-repeat;
+}
+#masthead .site-title {
+  margin: 50px 0 20px;
+  padding: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+}
+#masthead .site-title:hover {
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+  -khtml-opacity: 0.4;
+}
+#masthead .menu-toggle {
+  color: #fff;
+  font-size: 16px;
+  background: #303030;
+  padding: 20px 0 20px 10px;
+}
+#masthead .menu-stripe {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 #masthead nav {
-  margin-top: 70px;
+  margin-top: 97px;
 }
 #masthead .nav-bar {
   float: right;
   background: transparent;
 }
 #masthead .nav-bar li {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 40px;
   border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 #masthead .nav-bar li a {
   padding: 0;
@@ -64,13 +100,42 @@ a:hover {
   text-transform: uppercase;
   font-size: 28px;
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 #masthead .nav-bar li a:hover {
+  padding: 0 0 5px;
+  border-color: #6ccfd4;
   color: #6ccfd4;
   border-bottom: 1px solid #e1e1e1;
 }
 #masthead .nav-bar li:hover {
   background: transparent;
+}
+#masthead #secondary-nav {
+  float: right;
+}
+#masthead #secondary-nav li {
+  margin: 0 16px 0 0;
+  padding-left: 15px;
+  background: url(images/vert-line.png) left center no-repeat;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+#masthead #secondary-nav li:last-child {
+  margin-right: 0;
+}
+#masthead #secondary-nav li.blog {
+  color: #565656;
+  font-style: italic;
+  background: none;
+  font-weight: 700;
+}
+#masthead #secondary-nav li a {
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 /*---------------------------------------------------------- Sidebar */
 aside h1 {
@@ -129,10 +194,10 @@ article .post-meta .the-cat ul li a {
   opacity: 1;
   -moz-opacity: 1;
   -khtml-opacity: 1;
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 article .post-meta .the-cat ul li a:hover {
   opacity: 0.4;
@@ -154,6 +219,14 @@ article .featured-img img {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+article .entry-content {
+  margin-bottom: 40px;
+}
+article footer.entry-meta {
+  border-top: 1px solid #e1e1e1;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
 /*------------------------------------- Mixens */
 /*------------------------------------- extra stuf */
 /* Very large display targeting */
@@ -161,13 +234,30 @@ article .featured-img img {
   
 }
 /* Medium display targeting */
-@media only screen and (max-width: 1279px) and (min-width: 768px) {
-  
+@media only screen and (max-width: 1048px) and (min-width: 768px) {
+  #masthead .nav-bar li {
+    padding-left: 15px;
+  }
+  #masthead .nav-bar li a {
+    font-size: 28px;
+  }
 }
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
+  .container {
+    padding: 20px;
+  }
   #masthead .menu {
     display: none;
+  }
+  #masthead nav {
+    margin-top: 0;
+  }
+  #masthead .nav-bar {
+    float: none;
+  }
+  #masthead .nav-bar li {
+    padding-left: 0;
   }
   article .post-meta .author {
     float: left;

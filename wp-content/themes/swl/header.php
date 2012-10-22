@@ -46,33 +46,44 @@
 
 	<?php do_action( 'before' ); ?>
 	
-			<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header" role="banner">
 			
-				<div class="row">
-					<div class="four columns">
-				
-						<h1 class="site-title">
-							<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-								<?php bloginfo( 'name' ); ?>
-							</a>
-						</h1>
-						
-					</div><!--/four columns -->
+			<div class="row">
+				<div class="three columns">
+			
+					<h1 class="site-title">
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<img src="<?php bloginfo( 'template_url' ); ?>/images/swl-logo4.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+						</a>
+					</h1>
 					
-					<div class="eight columns">
-			
-						<nav role="navigation" class="site-navigation main-navigation clearfix">
-						
-							<h1 class="assistive-text"><?php _e( 'Menu', 'swl' ); ?></h1>
+				</div><!--/four columns -->
+				
+				<div class="nine columns">
 		
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '','menu_class' => 'menu nav-bar' ) ); ?>
+					<nav role="navigation" class="site-navigation main-navigation clearfix">
+					
+						<h1 class="assistive-text"><?php _e( 'Menu', 'swl' ); ?></h1>
+	
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '','menu_class' => 'menu nav-bar' ) ); ?>
+						
+					</nav><!-- .site-navigation .main-navigation -->
+					
+					<ul id="secondary-nav" class="link-list">
+						<li class="blog"><a href="<?php echo bloginfo( 'home' ); ?>" title="blog">blog</a></li>
+						<?php wp_list_categories('title_li='); ?>
+					</ul>					
+						
+				</div><!-- /eight columns -->
+			</div><!--/row -->
+			
+			<div class="row">
+				<div class="twelve columns">
+					<hr />
+				</div>
+			</div>
 							
-						</nav><!-- .site-navigation .main-navigation -->
-							
-					</div><!-- /eight columns -->
-				</div><!--/row -->
-							
-			</header><!-- #masthead .site-header -->
+		</header><!-- #masthead .site-header -->
+			
 
-	<div class="row">
-		<div id="main" class="site-main">
+		<div id="main" class="site-main clearfix">
