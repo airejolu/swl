@@ -9,13 +9,17 @@ License: GNU General Public License
 License URI: license.txt
 Tags:
 */
-/*---------------------------------------------------------- Main Structure */
+/*---------------------------------------------------------- typography */
 @font-face {
   font-weight: normal;
   font-style: normal;
   font-family: 'Nexa Light';
   src: url('css/webfonts/nexa-light.eot');
   src: url('css/webfonts/nexa-light.eot?#iefix') format('embedded-opentype'), url('css/webfonts/nexa-light.woff') format('woff'), url('css/webfonts/nexa-light.ttf') format('truetype'), url('css/webfonts/nexa-light.svg#ywftsvg') format('svg');
+}
+body {
+  color: #565656;
+  line-height: 1.2;
 }
 h1,
 h2,
@@ -27,7 +31,7 @@ h5 {
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 a {
-  color: #6ccfd4;
+  color: #ef4257;
 }
 a:hover {
   color: rgba(108, 207, 212, 0.5);
@@ -37,7 +41,7 @@ a:hover {
 }
 /*---------------------------------------------------------- Main Structure */
 #secondary {
-  padding-left: 12%;
+  padding-left: 10%;
   border-left: 1px solid #e1e1e1;
 }
 /*---------------------------------------------------------- Header/Top Nav */
@@ -62,19 +66,19 @@ a:hover {
   -khtml-opacity: 0.4;
 }
 #masthead .menu-toggle {
+  padding: 20px 0 20px 10px;
+  background: #303030;
   color: #fff;
   font-size: 16px;
-  background: #303030;
-  padding: 20px 0 20px 10px;
 }
 #masthead .menu-stripe {
   display: block;
   width: 18px;
   height: 2px;
-  background-color: #fff;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   border-radius: 1px;
+  background-color: #fff;
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
@@ -129,19 +133,27 @@ a:hover {
   margin-right: 0;
 }
 #masthead #secondary-nav li.blog {
-  color: #565656;
-  font-style: italic;
   background: none;
+  color: #565656;
   font-weight: 700;
+  font-style: italic;
 }
 #masthead #secondary-nav li a {
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 /*---------------------------------------------------------- Sidebar */
+aside.widget {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e1e1;
+}
 aside h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 18px;
+}
+aside ul {
+  list-style: none;
 }
 /*---------------------------------------------------------- Post stuff */
 article header .entry-title {
@@ -205,8 +217,22 @@ article .post-meta .the-cat ul li a:hover {
   -khtml-opacity: 0.4;
 }
 article .post-meta time {
+  display: block;
+  margin-bottom: 15px;
   color: #999999;
   font-size: 12px;
+}
+article .post-meta .comments-link a {
+  display: block;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  height: 24px;
+  background: url(images/icn-heart.png) left center no-repeat;
+  color: #ef4257;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+  line-height: 28px;
 }
 article .featured-img {
   margin-bottom: 20px;
@@ -223,9 +249,9 @@ article .entry-content {
   margin-bottom: 40px;
 }
 article footer.entry-meta {
-  border-top: 1px solid #e1e1e1;
-  padding: 20px 0;
   margin-bottom: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #e1e1e1;
 }
 /*------------------------------------- Mixens */
 /*------------------------------------- extra stuf */

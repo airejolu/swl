@@ -12,17 +12,18 @@ Tags:
 
 
 // colors
-
+	@dark:			#202020;
 	@grey:			#565656;
 	@light-grey:	#999999;
 	@off-white:		#f4f4f4;
+	@pink:			#EF4257;
 	@blue:			#6ccfd4;
 	@yellow:		#faf398;
 	@red:			#f15968;
 
 	@border-color: #e1e1e1;
 
-/*---------------------------------------------------------- Main Structure */
+/*---------------------------------------------------------- typography */
 
 
 @webfont: 'Nexa Light', Helvetica, Arial, Sans-Serif;
@@ -39,6 +40,11 @@ Tags:
 	     url('css/webfonts/nexa-light.svg#ywftsvg') format('svg');
 }
 
+body {
+	color: @grey;
+	line-height: 1.2;
+}
+
 h1,
 h2,
 h3,
@@ -50,14 +56,13 @@ h5 {
 }
 
 a {
-	color: @blue;
+	color: @pink;
 	
 	&:hover {
 		color: fade( @blue, 50%);
 	}
 	
 } // a
-
 
 .assistive-text {
 	display: none;
@@ -70,7 +75,7 @@ a {
 }
 
 #secondary {
-	padding-left: 12%;
+	padding-left: 10%;
 	.border-left;
 }
 
@@ -89,29 +94,29 @@ a {
 	.site-title {
 		margin: 50px 0 20px;
 		padding: 0;
-		.animate (all, .25s);
-		.opacity(1);
 		
 			&:hover {
 				.opacity(0.4);
 			}
+		.animate (all, .25s);
+		.opacity(1);
 		}//site-title
 		
 		.menu-toggle {
+			padding: 20px 0 20px 10px;
+			background: #303030;
 			color: #fff;
 			font-size: 16px;
-			background: #303030;
-			padding: 20px 0 20px 10px;
 		}
 		
 		.menu-stripe {
 			display: block;
 			width: 18px;
 			height: 2px;
-			background-color: #fff;
 			-webkit-border-radius: 1px;
 			-moz-border-radius: 1px;
 			border-radius: 1px;
+			background-color: #fff;
 			-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 			-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
@@ -154,8 +159,10 @@ a {
 						background: transparent;
 					}
 					
-				}
-			
+				}//li
+				
+
+							
 		}//navbar
 		
 		#secondary-nav {
@@ -174,10 +181,10 @@ a {
 						}
 					
 						&.blog {
-							color: @grey;
-							font-style: italic;
 							background: none;
+							color: @grey;
 							font-weight: 700;
+							font-style: italic;
 						}
 						
 						
@@ -196,11 +203,21 @@ a {
 /*---------------------------------------------------------- Sidebar */
 
 aside {
+
+	&.widget {
+		margin-bottom: 40px;
+		padding-bottom: 20px;
+		.border-bottom;
+	}
 	
 	h1 {
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-size: 18px;
+	}
+	
+	ul {
+		list-style: none;
 	}
 	
 }
@@ -284,8 +301,25 @@ article {
 		}//the-cat
 		
 		time {
+			display: block;
+			margin-bottom: 15px;
 			color: @light-grey;
 			font-size: 12px;
+		}
+		
+		.comments-link {
+			a {
+				display: block;
+				margin-bottom: 15px;
+				padding-left: 30px;
+				height: 24px;
+				background: url(images/icn-heart.png) left center no-repeat;
+				color: @pink;
+				text-transform: uppercase;
+				font-size: 10px;
+				font-family: @webfont;
+				line-height: 28px;
+			}
 		}
 		
 	}//post-meta
@@ -306,9 +340,9 @@ article {
 	}//entry-content
 	
 	footer.entry-meta {
-		.border-top;
-		padding: 20px 0;
 		margin-bottom: 40px;
+		padding: 20px 0;
+		.border-top;
 	}
 
 } //article 

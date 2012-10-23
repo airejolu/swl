@@ -22,11 +22,17 @@
 					</div><!--/author-name -->
 				</div><!--/author -->
 				
+				<time>
+					<?php the_date(); ?>
+				</time>				
+				
 				<div class="the-cat">
 					<?php the_category(); ?>
 				</div>
 				
-				<time><?php the_date(); ?></time>
+				<div class="comments-link">
+					<?php comments_popup_link( __( '0 comments', 'swl' ), __( '1 comment', 'swl' ), __( '% comments', 'swl' ) ); ?>
+				</div>
 				
 			</div><!--/post-meta -->
 		
