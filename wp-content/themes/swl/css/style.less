@@ -66,16 +66,35 @@ h5 {
 
 a {
 	color: @pink;
-	.animate(color, .30s);
 	
 	&:hover {
-		color: fade( @blue, 50%);
+		color: fade( @pink, 50%);
 	}
+	.animate(color, .30s);
 	
 } // a
 
+blockquote {
+	border-color: @pink;
+	border-left-width: 5px;
+}
+
 .assistive-text {
 	display: none;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+.aligncenter {
+	margin: 0 auto;
 }
 
 /*---------------------------------------------------------- Main Structure */
@@ -84,14 +103,18 @@ a {
 	
 }
 
+#primary {
+	padding-right: 3%;
+	.border-right;
+}
+
 #secondary {
-	padding-left: 10%;
-	.border-left;
+
 }
 
 
 #main {
-
+	margin-bottom: 80px;
 }
 
 
@@ -99,10 +122,11 @@ a {
 
 #masthead {
 	margin-bottom: 40px;
+	border-top: 10px solid @pink;
 	background: url(images/bg.jpg) top center no-repeat;
 	
 	.site-title {
-		margin: 50px 0 20px;
+		margin: 30px 0 0;
 		padding: 0;
 		
 			&:hover {
@@ -114,11 +138,13 @@ a {
 		
 		.menu-toggle {
 			margin: 0 0 20px;
-			padding: 20px 0 20px 10px;
+			padding: 20px 0;
 			background: @pink;
 			color: #fff;
+			text-align: center;
 			font-size: 16px;
 			line-height: 1;
+			.border-radius(24px);
 		}
 		
 		.menu-stripe {
@@ -135,7 +161,7 @@ a {
 		}
 	
 		nav {
-			margin-top: 97px;
+			margin-top: 60px;
 		}
 	
 		.nav-bar {
@@ -159,8 +185,7 @@ a {
 							
 							&:hover {
 								padding: 0 0 5px;
-								border-color: @blue;
-								color: @blue;
+								color: @light-grey;
 								.border-bottom;
 							}
 							.animate (all, .25s);
@@ -179,6 +204,8 @@ a {
 		
 		#secondary-nav {
 			float: right;
+			padding: 5px;
+			background: @off-white;
 			
 				li {
 					margin: 0 16px 0 0;
@@ -201,12 +228,12 @@ a {
 						
 						
 						a {
-							font-family: @webfont;
 							padding: 2px 5px 0 5px;
+							font-family: @webfont;
 							line-height: 25px;
 								&:hover {
-									color: #fff;
 									background: @light-grey;
+									color: #fff;
 								}
 						}
 						
@@ -294,6 +321,7 @@ article {
 		.entry-title {
 			margin: 0 0 30px 0;
 			color: @grey;
+			word-break: break-word;
 			
 				a {
 					color: @grey;
@@ -348,7 +376,7 @@ article {
 							text-align: center;
 							text-transform: uppercase;
 							letter-spacing: 1px;
-							font-size: 14px;
+							font-size: 75%;
 							
 							
 							&:hover {
@@ -387,31 +415,40 @@ article {
 	
 	
 	.featured-img {
-		background: @pink;
-		background-image: url(images/icn-plus.png);
-		background-repeat: no-repeat;
-		background-position: center center;
 		overflow: hidden;
 		margin-bottom: 20px;
-		.box-shadow;
-		.border-radius;		
+		background: @pink;
+		background-image: url(images/icn-plus.png);
+		background-position: center center;
+		background-repeat: no-repeat;		
 		
 			img {
 				width: 100%;
-				.opacity(1);
-				.animate(opacity, .40s);
 				vertical-align: bottom;
 				
 				&:hover {
 					.opacity(0.2);
 				}
+				.opacity(1);
+				.animate(opacity, .40s);
 				
 			}
+		.box-shadow;
+		.border-radius;
 	}
 	
 	
 	.entry-content {
 		margin-bottom: 40px;
+		
+			h2 {
+				font-size: 36px;
+			}
+		
+			ul, ol {
+				margin-left: 40px;
+			}
+		
 	}//entry-content
 	
 	footer.entry-meta {
@@ -442,6 +479,152 @@ article {
 	}			
 
 } //article 
+
+.paging-navigation {
+	margin: 40px 0;
+		
+		a {
+			display: inline-block;
+			padding: 20px 40px;
+			background: @dark;
+			color: #fff;
+			
+				&:hover {
+					background: @pink;
+				}
+			.border-radius(20px);
+			.animate(background, .40s);
+		}
+	
+		.nav-previous {
+			float: left;
+		}
+		
+		.nav-next {
+			float: right;
+		}
+	
+}
+
+
+//post navigation
+
+.post-navigation {
+	
+	div {
+		position: fixed;
+		top: 45%;
+		z-index: 9999;
+		
+		&.nav-previous {
+			left: 0;
+			
+				a {
+					margin-left: -111px;
+					
+					&:hover {
+						padding-left: 120px;
+					}
+				}
+		}
+		
+		&.nav-next {
+			right: 0;
+			
+				a {
+					margin-right: -111px;
+					
+					&:hover {
+						padding-right: 120px;
+					}
+				}
+		
+		}
+		
+		a {
+			padding: 25px 10px;
+			color: #fff;
+			background: @pink;
+			display: block;
+			overflow: hidden;
+			.animate(all, .25s);
+			line-height: 29px;
+			
+			i {
+				width: 12px;
+				height: 29px;
+				display: inline-block;
+				
+				&.icn-arrow-left {
+					background: url(images/icn-arrow-left.png) center center no-repeat;
+					float: right;
+				}
+				
+				&.icn-arrow-right {
+					background: url(images/icn-arrow-right.png) center center no-repeat;
+					float: left;
+				}
+			}
+			
+			span {
+				font-family: @webfont;
+				text-transform: uppercase;
+				display: inline-block;
+				padding: 0 10px;
+			}
+		
+			
+			&:hover {
+				.box-shadow;
+			}
+			
+		}
+	}
+	
+}//post-navigation 
+
+//pagenavi
+.wp-pagenavi {
+			font-weight: 700;
+	font-family: @webfont;
+	
+	
+	a {
+		padding: 5px 15px;
+		border: none !important;
+		font-size: 16px;
+	}
+	
+	span {
+		padding: 5px 15px;
+		border: none !important;
+		
+		&.current {
+			border-bottom: 1px dotted @border-color !important;
+			color: @light-grey;
+		}
+		
+		&.pages {
+			font-size: 12px;
+		}
+	}
+	
+	
+}//wp-pagenavi
+
+.lazysocialbuttons {
+	margin-bottom: 20px;
+}
+
+
+/*------------------------------------- footer */
+
+footer#colophon {
+	padding: 40px 0;
+	background: @off-white;
+	text-align: center;
+}
+
 
 /*------------------------------------- Mixens */
 
@@ -498,8 +681,14 @@ article {
 /* Medium display targeting */
 @media only screen and (max-width: 1048px) and (min-width: 768px) { 
 
+	body {
+		padding: 20px;
+		background: @off-white;
+	}
+
 	.container {
-		padding: 0 40px;
+		background: #fff;
+
 	}
 
 	#masthead .nav-bar li {
@@ -525,16 +714,38 @@ article {
 			font-size: 12px;
 		}
 	}
+	
+	.post-navigation {
+		div a {
+			padding: 25px 5px;
+		}
+	}
+	
+	
 }//medium
 
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
 
-	.container {
-		padding: 20px;
+	body {
+		padding: 10px;
+		background: @off-white;
 	}
 
+	.container {
+		background: #fff;
+
+	}
+	
+	#primary {
+		padding-right: 0;
+		border: none;
+	}
+	
+
 	#masthead {
+	
+		margin-bottom: 10px;
 	
 		.site-title {
 			text-align: center;
@@ -564,22 +775,33 @@ article {
 	
 	}//masthead
 
-	article .post-meta {
+	article {
 	
-		.author {
-			float: left;
-		}
-		.author-name {
-			float: left;
-			margin-left: 10px;
-			width: auto;
+		header{
+		
+			.entry-title {
+				margin-bottom: 10px;
+			}
 		}
 		
-		.the-cat {
-			float: left;
-		}
+		.post-meta {
 		
-	} //article/post-meta
+				.author {
+					float: left;
+				}
+				.author-name {
+					float: left;
+					margin-left: 10px;
+					width: auto;
+				}
+				
+				.the-cat {
+					float: left;
+				}
+			}//post-meta
+		
+	} //articl;
+	
 
 }// 767px
 

@@ -38,23 +38,42 @@ a {
   transition: color 0.3s ease-in-out;
 }
 a:hover {
-  color: rgba(151, 154, 255, 0.5);
+  color: rgba(239, 66, 87, 0.5);
+}
+blockquote {
+  border-color: #ef4257;
+  border-left-width: 5px;
 }
 .assistive-text {
   display: none;
 }
+.alignleft {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.alignright {
+  float: right;
+  margin: 0 0 20px 20px;
+}
+.aligncenter {
+  margin: 0 auto;
+}
 /*---------------------------------------------------------- Main Structure */
-#secondary {
-  padding-left: 10%;
-  border-left: 1px solid #e1e1e1;
+#primary {
+  padding-right: 3%;
+  border-right: 1px solid #e1e1e1;
+}
+#main {
+  margin-bottom: 80px;
 }
 /*---------------------------------------------------------- Header/Top Nav */
 #masthead {
   margin-bottom: 40px;
+  border-top: 10px solid #ef4257;
   background: url(images/bg.jpg) top center no-repeat;
 }
 #masthead .site-title {
-  margin: 50px 0 20px;
+  margin: 30px 0 0;
   padding: 0;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -71,11 +90,15 @@ a:hover {
 }
 #masthead .menu-toggle {
   margin: 0 0 20px;
-  padding: 20px 0 20px 10px;
+  padding: 20px 0;
   background: #ef4257;
   color: #fff;
+  text-align: center;
   font-size: 16px;
   line-height: 1;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
 }
 #masthead .menu-stripe {
   display: block;
@@ -90,7 +113,7 @@ a:hover {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 #masthead nav {
-  margin-top: 97px;
+  margin-top: 60px;
 }
 #masthead .nav-bar {
   float: right;
@@ -117,8 +140,7 @@ a:hover {
 }
 #masthead .nav-bar li a:hover {
   padding: 0 0 5px;
-  border-color: #979aff;
-  color: #979aff;
+  color: #999999;
   border-bottom: 1px solid #e1e1e1;
 }
 #masthead .nav-bar li:hover {
@@ -126,6 +148,8 @@ a:hover {
 }
 #masthead #secondary-nav {
   float: right;
+  padding: 5px;
+  background: #f4f4f4;
 }
 #masthead #secondary-nav li {
   margin: 0 16px 0 0;
@@ -145,13 +169,13 @@ a:hover {
   font-style: italic;
 }
 #masthead #secondary-nav li a {
-  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
   padding: 2px 5px 0 5px;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
   line-height: 25px;
 }
 #masthead #secondary-nav li a:hover {
-  color: #fff;
   background: #999999;
+  color: #fff;
 }
 #masthead #secondary-nav .cat-item-4 a {
   color: #979aff;
@@ -201,6 +225,7 @@ aside ul {
 article header .entry-title {
   margin: 0 0 30px 0;
   color: #565656;
+  word-break: break-word;
 }
 article header .entry-title a {
   color: #565656;
@@ -244,7 +269,7 @@ article .post-meta .the-cat ul li a {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 75%;
   opacity: 1;
   -moz-opacity: 1;
   -khtml-opacity: 1;
@@ -277,12 +302,12 @@ article .post-meta .comments-link a {
   line-height: 28px;
 }
 article .featured-img {
-  background: #ef4257;
-  background-image: url(images/icn-plus.png);
-  background-repeat: no-repeat;
-  background-position: center center;
   overflow: hidden;
   margin-bottom: 20px;
+  background: #ef4257;
+  background-image: url(images/icn-plus.png);
+  background-position: center center;
+  background-repeat: no-repeat;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -292,6 +317,7 @@ article .featured-img {
 }
 article .featured-img img {
   width: 100%;
+  vertical-align: bottom;
   opacity: 1;
   -moz-opacity: 1;
   -khtml-opacity: 1;
@@ -299,7 +325,6 @@ article .featured-img img {
   -moz-transition: opacity 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
-  vertical-align: bottom;
 }
 article .featured-img img:hover {
   opacity: 0.2;
@@ -308,6 +333,13 @@ article .featured-img img:hover {
 }
 article .entry-content {
   margin-bottom: 40px;
+}
+article .entry-content h2 {
+  font-size: 36px;
+}
+article .entry-content ul,
+article .entry-content ol {
+  margin-left: 40px;
 }
 article footer.entry-meta {
   margin-bottom: 40px;
@@ -329,6 +361,119 @@ article.category-wellbeing .the-cat ul li a {
 article.category-stories .the-cat ul li a {
   background: #fe9e61;
 }
+.paging-navigation {
+  margin: 40px 0;
+}
+.paging-navigation a {
+  display: inline-block;
+  padding: 20px 40px;
+  background: #202020;
+  color: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: background 0.4s ease-in-out;
+  -moz-transition: background 0.4s ease-in-out;
+  -o-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
+}
+.paging-navigation a:hover {
+  background: #ef4257;
+}
+.paging-navigation .nav-previous {
+  float: left;
+}
+.paging-navigation .nav-next {
+  float: right;
+}
+.post-navigation div {
+  position: fixed;
+  top: 45%;
+  z-index: 9999;
+}
+.post-navigation div.nav-previous {
+  left: 0;
+}
+.post-navigation div.nav-previous a {
+  margin-left: -111px;
+}
+.post-navigation div.nav-previous a:hover {
+  padding-left: 120px;
+}
+.post-navigation div.nav-next {
+  right: 0;
+}
+.post-navigation div.nav-next a {
+  margin-right: -111px;
+}
+.post-navigation div.nav-next a:hover {
+  padding-right: 120px;
+}
+.post-navigation div a {
+  padding: 25px 10px;
+  color: #fff;
+  background: #ef4257;
+  display: block;
+  overflow: hidden;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  line-height: 29px;
+}
+.post-navigation div a i {
+  width: 12px;
+  height: 29px;
+  display: inline-block;
+}
+.post-navigation div a i.icn-arrow-left {
+  background: url(images/icn-arrow-left.png) center center no-repeat;
+  float: right;
+}
+.post-navigation div a i.icn-arrow-right {
+  background: url(images/icn-arrow-right.png) center center no-repeat;
+  float: left;
+}
+.post-navigation div a span {
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0 10px;
+}
+.post-navigation div a:hover {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.wp-pagenavi {
+  font-weight: 700;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
+}
+.wp-pagenavi a {
+  padding: 5px 15px;
+  border: none !important;
+  font-size: 16px;
+}
+.wp-pagenavi span {
+  padding: 5px 15px;
+  border: none !important;
+}
+.wp-pagenavi span.current {
+  border-bottom: 1px dotted #e1e1e1 !important;
+  color: #999999;
+}
+.wp-pagenavi span.pages {
+  font-size: 12px;
+}
+.lazysocialbuttons {
+  margin-bottom: 20px;
+}
+/*------------------------------------- footer */
+footer#colophon {
+  padding: 40px 0;
+  background: #f4f4f4;
+  text-align: center;
+}
 /*------------------------------------- Mixens */
 /*------------------------------------- extra stuf */
 /* Very large display targeting */
@@ -337,8 +482,12 @@ article.category-stories .the-cat ul li a {
 }
 /* Medium display targeting */
 @media only screen and (max-width: 1048px) and (min-width: 768px) {
+  body {
+    padding: 20px;
+    background: #f4f4f4;
+  }
   .container {
-    padding: 0 40px;
+    background: #fff;
   }
   #masthead .nav-bar li {
     padding-left: 15px;
@@ -357,11 +506,25 @@ article.category-stories .the-cat ul li a {
   article .post-meta .the-cat ul li a {
     font-size: 12px;
   }
+  .post-navigation div a {
+    padding: 25px 5px;
+  }
 }
 /* Small display targeting */
 @media only screen and (max-width: 767px) {
+  body {
+    padding: 10px;
+    background: #f4f4f4;
+  }
   .container {
-    padding: 20px;
+    background: #fff;
+  }
+  #primary {
+    padding-right: 0;
+    border: none;
+  }
+  #masthead {
+    margin-bottom: 10px;
   }
   #masthead .site-title {
     text-align: center;
@@ -381,6 +544,9 @@ article.category-stories .the-cat ul li a {
   #masthead #secondary-nav {
     float: none;
     margin-left: 0;
+  }
+  article header .entry-title {
+    margin-bottom: 10px;
   }
   article .post-meta .author {
     float: left;

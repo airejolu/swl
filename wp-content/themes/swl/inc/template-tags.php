@@ -30,7 +30,7 @@ function swl_content_nav( $nav_id ) {
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
 		return;
 
-	$nav_class = 'site-navigation paging-navigation';
+	$nav_class = 'site-navigation paging-navigation clearfix';
 	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
 
@@ -40,8 +40,8 @@ function swl_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'swl' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'swl' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous hide-for-small">%link</div>', '<span>Last Post</span>' . _x( '<i class="icn-arrow-left"></i>', 'Previous post link', 'swl' ) . '' ); ?>
+		<?php next_post_link( '<div class="nav-next hide-for-small">%link</div>', '' . _x( '<i class="icn-arrow-right"></i>', 'Next post link', 'swl' ) . '<span>Next Post</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 

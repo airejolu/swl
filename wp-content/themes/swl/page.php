@@ -12,7 +12,10 @@
  */
 
 get_header(); ?>
-
+<div class="row">
+	
+	<div class="nine columns">
+	
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -24,8 +27,13 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
+
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
+		
+	</div><!--/eight columns -->
 
 <?php get_sidebar(); ?>
+
+</div><!--/row -->
 <?php get_footer(); ?>

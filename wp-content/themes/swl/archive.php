@@ -10,7 +10,11 @@
 
 get_header(); ?>
 
-		<section id="primary" class="content-area">
+<div class="row">
+	
+	<div class="nine columns">
+	
+		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -19,17 +23,17 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 							if ( is_category() ) {
-								printf( __( 'Category Archives: %s', 'swl' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+								printf( __( '%s', 'swl' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 							} elseif ( is_tag() ) {
-								printf( __( 'Tag Archives: %s', 'swl' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+								printf( __( 'Tagged: %s', 'swl' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 							} elseif ( is_author() ) {
 								/* Queue the first post, that way we know
 								 * what author we're dealing with (if that is the case).
 								*/
 								the_post();
-								printf( __( 'Author Archives: %s', 'swl' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+								printf( __( '%s Posts', 'swl' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -67,8 +71,6 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
-				<?php swl_content_nav( 'nav-above' ); ?>
-
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -82,7 +84,9 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php swl_content_nav( 'nav-below' ); ?>
+				<?php //swl_content_nav( 'nav-below' ); ?>
+				
+				<?php wp_pagenavi(); ?>
 
 			<?php else : ?>
 
@@ -91,7 +95,11 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area -->
+		</div><!-- #primary .content-area -->
+		
+	</div><!--/eight columns -->
 
 <?php get_sidebar(); ?>
+
+</div><!--/row -->
 <?php get_footer(); ?>

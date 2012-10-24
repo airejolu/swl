@@ -8,12 +8,14 @@
 
 get_header(); ?>
 
+<div class="row">
+	
+	<div class="nine columns">
+	
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php swl_content_nav( 'nav-above' ); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
@@ -27,8 +29,13 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
+
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
+		
+	</div><!--/eight columns -->
 
 <?php get_sidebar(); ?>
+
+</div><!--/row -->
 <?php get_footer(); ?>
