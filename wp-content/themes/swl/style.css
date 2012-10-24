@@ -47,16 +47,29 @@ blockquote {
 .assistive-text {
   display: none;
 }
-.alignleft {
+img.alignright {
+  float: right;
+  margin: 10px 0 1em 1em;
+}
+img.alignleft {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 10px 1em 1em 0;
+}
+img.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 .alignright {
   float: right;
-  margin: 0 0 20px 20px;
+}
+.alignleft {
+  float: left;
 }
 .aligncenter {
-  margin: 0 auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 /*---------------------------------------------------------- Main Structure */
 #primary {
@@ -410,40 +423,46 @@ article.category-stories .the-cat ul li a {
   padding-right: 120px;
 }
 .post-navigation div a {
-  padding: 25px 10px;
-  color: #fff;
-  background: #ef4257;
   display: block;
   overflow: hidden;
+  padding: 25px 10px;
+  background: #ef4257;
+  color: #fff;
+  line-height: 29px;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  line-height: 29px;
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+  -khtml-opacity: 0.4;
 }
 .post-navigation div a i {
+  display: inline-block;
   width: 12px;
   height: 29px;
-  display: inline-block;
 }
 .post-navigation div a i.icn-arrow-left {
-  background: url(images/icn-arrow-left.png) center center no-repeat;
   float: right;
+  background: url(images/icn-arrow-left.png) center center no-repeat;
 }
 .post-navigation div a i.icn-arrow-right {
-  background: url(images/icn-arrow-right.png) center center no-repeat;
   float: left;
+  background: url(images/icn-arrow-right.png) center center no-repeat;
 }
 .post-navigation div a span {
-  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
-  text-transform: uppercase;
   display: inline-block;
   padding: 0 10px;
+  text-transform: uppercase;
+  font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 .post-navigation div a:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
 }
 .wp-pagenavi {
   font-weight: 700;

@@ -83,19 +83,12 @@ blockquote {
 	display: none;
 }
 
-.alignleft {
-	float: left;
-	margin: 0 20px 20px 0;
-}
-
-.alignright {
-	float: right;
-	margin: 0 0 20px 20px;
-}
-
-.aligncenter {
-	margin: 0 auto;
-}
+img.alignright {float:right; margin:10px 0 1em 1em;}
+img.alignleft {float:left; margin:10px 1em 1em 0;}
+img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
+.alignright {float:right; }
+.alignleft {float:left; }
+.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 
 /*---------------------------------------------------------- Main Structure */
 
@@ -542,41 +535,43 @@ article {
 		}
 		
 		a {
-			padding: 25px 10px;
-			color: #fff;
-			background: @pink;
 			display: block;
 			overflow: hidden;
-			.animate(all, .25s);
+			padding: 25px 10px;
+			background: @pink;
+			color: #fff;
 			line-height: 29px;
 			
 			i {
+				display: inline-block;
 				width: 12px;
 				height: 29px;
-				display: inline-block;
 				
 				&.icn-arrow-left {
-					background: url(images/icn-arrow-left.png) center center no-repeat;
 					float: right;
+					background: url(images/icn-arrow-left.png) center center no-repeat;
 				}
 				
 				&.icn-arrow-right {
-					background: url(images/icn-arrow-right.png) center center no-repeat;
 					float: left;
+					background: url(images/icn-arrow-right.png) center center no-repeat;
 				}
 			}
 			
 			span {
-				font-family: @webfont;
-				text-transform: uppercase;
 				display: inline-block;
 				padding: 0 10px;
+				text-transform: uppercase;
+				font-family: @webfont;
 			}
 		
 			
 			&:hover {
 				.box-shadow;
+				.opacity(1);
 			}
+			.animate(all, .25s);
+			.opacity (0.4);
 			
 		}
 	}
