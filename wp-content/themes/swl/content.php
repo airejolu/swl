@@ -22,18 +22,23 @@
 					</div><!--/author-name -->
 				</div><!--/author -->
 				
-				<time>
-					<?php the_date(); ?>
-				</time>				
-				
-				<div class="the-cat">
-					<?php the_category(); ?>
-				</div>
-				
-				<div class="comments-link">
-					<?php comments_popup_link( __( '0 comments', 'swl' ), __( '1 comment', 'swl' ), __( '% comments', 'swl' ) ); ?>
-				</div>
-				
+				<div class="hide-for-small">
+					<time>
+						<?php the_date(); ?>
+					</time>				
+					
+					<div class="the-cat">
+						<?php the_category( '', TRUE); ?>
+					</div>
+					
+					<div class="comments-link">
+						<?php comments_popup_link( __( '0 comments', 'swl' ), __( '1 comment', 'swl' ), __( '% comments', 'swl' ) ); ?>
+					</div>
+					
+					<div class="the-tags">
+						<?php the_tags(); ?>
+					</div>
+				</div><!--/hide-for-mobile -->
 			</div><!--/post-meta -->
 		
 		</div><!--/two columns -->
@@ -52,7 +57,9 @@
 			<div class="entry-summary">
 				
 				<div class="featured-img-small">
-					<?php the_post_thumbnail( 'thumbnail' ); ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_post_thumbnail( 'thumbnail' ); ?>
+					</a>
 				</div><!--/featured-image -->
 				
 				<?php the_excerpt(); ?>
@@ -60,7 +67,9 @@
 			<?php else : ?>
 			
 			<div class="featured-img">
-				<?php the_post_thumbnail(); ?>
+				<a class="post-img-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
 			</div><!--/featured-image -->
 			
 			<div class="entry-content">
@@ -70,32 +79,8 @@
 			
 			<?php endif; ?>
 		
-			<footer class="entry-meta">
-				<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-					<?php
-						/* translators: used between list items, there is a space after the comma */
-						$categories_list = get_the_category_list( __( ', ', 'swl' ) );
-						if ( $categories_list && swl_categorized_blog() ) :
-					?>
-					<span class="cat-links">
-						<?php printf( __( 'Posted in %1$s', 'swl' ), $categories_list ); ?>
-					</span>
-					<?php endif; // End if categories ?>
-		
-					<?php
-						/* translators: used between list items, there is a space after the comma */
-						$tags_list = get_the_tag_list( '', __( ', ', 'swl' ) );
-						if ( $tags_list ) :
-					?>
-					<span class="sep"> | </span>
-					<span class="tag-links">
-						<?php printf( __( 'Tagged %1$s', 'swl' ), $tags_list ); ?>
-					</span>
-					<?php endif; // End if $tags_list ?>
-				<?php endif; // End if 'post' == get_post_type() ?>
-		
+			<footer class="entry-meta">		
 				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="sep"> | </span>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'swl' ), __( '1 Comment', 'swl' ), __( '% Comments', 'swl' ) ); ?></span>
 				<?php endif; ?>
 		

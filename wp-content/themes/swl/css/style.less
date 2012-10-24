@@ -17,11 +17,20 @@ Tags:
 	@light-grey:	#999999;
 	@off-white:		#f4f4f4;
 	@pink:			#EF4257;
-	@blue:			#6ccfd4;
-	@yellow:		#faf398;
+	@blue:			#979AFF;
+	@yellow:		#FE9E61;
 	@red:			#f15968;
 
 	@border-color: #e1e1e1;
+	
+	
+// category colors
+
+	@cat-fashion:		#979AFF;
+	@cat-stories:		#FE9E61;
+	@cat-fun:			#FE9E61;
+	@cat-wellbeing:		#F69AB3;
+	@cat-news:			#f15968;
 
 /*---------------------------------------------------------- typography */
 
@@ -57,6 +66,7 @@ h5 {
 
 a {
 	color: @pink;
+	.animate(color, .30s);
 	
 	&:hover {
 		color: fade( @blue, 50%);
@@ -103,10 +113,12 @@ a {
 		}//site-title
 		
 		.menu-toggle {
+			margin: 0 0 20px;
 			padding: 20px 0 20px 10px;
-			background: #303030;
+			background: @pink;
 			color: #fff;
 			font-size: 16px;
+			line-height: 1;
 		}
 		
 		.menu-stripe {
@@ -190,11 +202,59 @@ a {
 						
 						a {
 							font-family: @webfont;
+							padding: 2px 5px 0 5px;
+							line-height: 25px;
+								&:hover {
+									color: #fff;
+									background: @light-grey;
+								}
 						}
 						
 				}//li
+				
+				//category link colors
+				.cat-item-4 a {
+					color: @cat-fashion;
+					
+					&:hover {
+						background: @cat-fashion;
+					}
+				}
+				
+				.cat-item-6 a {
+					color: @cat-news;
+					
+					&:hover {
+						background: @cat-news;
+					}
+				}	
+				
+				.cat-item-5 a {
+					color: @cat-stories;
+					
+					&:hover {
+						background: @cat-stories;
+					}
+				}							
 			
-		}
+				.cat-item-8 a {
+					color: @cat-wellbeing;
+					
+					&:hover {
+						background: @cat-wellbeing;
+					}
+				}
+				
+				.cat-item-7 a {
+					color: @cat-fun;
+					
+					&:hover {
+						background: @cat-fun;
+					}
+				}								
+			
+			
+		}//secondary nav
 	
 }
 
@@ -239,7 +299,7 @@ article {
 					color: @grey;
 					
 					&:hover {
-						color: @blue;
+						color: @light-grey;
 					}
 				}//a
 		}//.entry-title; 
@@ -272,6 +332,7 @@ article {
 		}
 		
 		.the-cat {
+		
 			ul {
 				list-style: none;
 				list-style-position: inside;
@@ -282,8 +343,8 @@ article {
 						a {
 							display: block;
 							padding: 5px 0;
-							background: @yellow;
-							color: @grey;
+							background: @light-grey;
+							color: #fff;
 							text-align: center;
 							text-transform: uppercase;
 							letter-spacing: 1px;
@@ -294,12 +355,12 @@ article {
 								.opacity;
 							}
 							.opacity (1);
-							.animate (opacity, .25s);						
+							.animate(opacity, .25s);						
 						}//a
 					}//li;
 			}//ul 
 		}//the-cat
-		
+												
 		time {
 			display: block;
 			margin-bottom: 15px;
@@ -326,11 +387,25 @@ article {
 	
 	
 	.featured-img {
+		background: @pink;
+		background-image: url(images/icn-plus.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		overflow: hidden;
 		margin-bottom: 20px;
+		.box-shadow;
+		.border-radius;		
 		
 			img {
-				.box-shadow;
-				.border-radius;
+				width: 100%;
+				.opacity(1);
+				.animate(opacity, .40s);
+				vertical-align: bottom;
+				
+				&:hover {
+					.opacity(0.2);
+				}
+				
 			}
 	}
 	
@@ -344,6 +419,27 @@ article {
 		padding: 20px 0;
 		.border-top;
 	}
+	
+	//category color changes		
+	&.category-fashion .the-cat ul li a {
+		background: @cat-fashion;
+	}
+	
+	&.category-news .the-cat ul li a {
+		background: @cat-news;
+	}	
+	
+	&.category-fun .the-cat ul li a {
+		background: @cat-fun;
+	}	
+	
+	&.category-wellbeing .the-cat ul li a {
+		background: @cat-wellbeing;
+	}
+	
+	&.category-stories .the-cat ul li a {
+		background: @cat-stories;
+	}			
 
 } //article 
 
@@ -402,6 +498,9 @@ article {
 /* Medium display targeting */
 @media only screen and (max-width: 1048px) and (min-width: 768px) { 
 
+	.container {
+		padding: 0 40px;
+	}
 
 	#masthead .nav-bar li {
 		padding-left: 15px;
@@ -409,8 +508,23 @@ article {
 			a {
 				font-size: 28px;
 			}
-	}
+	}//masthead
 	
+	article .post-meta {
+		.author-name {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	
+		.author-img {
+			width: 35px;
+			height: 35px;
+		}
+		
+		.the-cat ul li a {
+			font-size: 12px;
+		}
+	}
 }//medium
 
 /* Small display targeting */
@@ -421,6 +535,11 @@ article {
 	}
 
 	#masthead {
+	
+		.site-title {
+			text-align: center;
+		}
+	
 		.menu {
 			display: none;
 		}
@@ -437,6 +556,12 @@ article {
 				}
 		}
 		
+		#secondary-nav {
+			float: none;
+			margin-left: 0;
+				
+		}
+	
 	}//masthead
 
 	article .post-meta {
