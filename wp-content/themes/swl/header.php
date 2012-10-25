@@ -31,6 +31,8 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link href="<?php echo bloginfo( 'template_url'); ?>/favicon.ico" rel="icon" type="image/x-icon" />
+
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -53,7 +55,7 @@
 			
 					<h1 class="site-title">
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php bloginfo( 'template_url' ); ?>/images/swl-logo6.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+							<img src="<?php bloginfo( 'template_url' ); ?>/images/swl-logo5.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 						</a>
 					</h1>
 					

@@ -17,7 +17,7 @@ Tags:
 	@light-grey:	#999999;
 	@off-white:		#f4f4f4;
 	@pink:			#EF4257;
-	@blue:			#979AFF;
+	@blue:			#F175D2;
 	@yellow:		#FE9E61;
 	@red:			#f15968;
 
@@ -30,7 +30,7 @@ Tags:
 	@cat-stories:		#FE9E61;
 	@cat-fun:			#FE9E61;
 	@cat-wellbeing:		#F69AB3;
-	@cat-news:			#f15968;
+	@cat-news:			#323134;
 
 /*---------------------------------------------------------- typography */
 
@@ -65,14 +65,23 @@ h5 {
 }
 
 a {
-	color: @pink;
+	color: @blue;
 	
 	&:hover {
-		color: fade( @pink, 50%);
+		color: fade( @blue, 50%);
 	}
 	.animate(color, .30s);
 	
 } // a
+
+#searchsubmit {
+	font-size: 12px;
+	background: @light-grey;
+	.box-shadow(0 0 0);
+		&:hover {
+			background: @pink;
+		}
+}
 
 blockquote {
 	border-color: @pink;
@@ -115,7 +124,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 
 #masthead {
 	margin-bottom: 40px;
-	border-top: 10px solid @pink;
+	border-top: 10px solid @dark;
 	background: url(images/bg.jpg) top center no-repeat;
 	
 	.site-title {
@@ -233,7 +242,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 				}//li
 				
 				//category link colors
-				.cat-item-4 a {
+				.cat-item-1129 a {
 					color: @cat-fashion;
 					
 					&:hover {
@@ -241,7 +250,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 					}
 				}
 				
-				.cat-item-6 a {
+				.cat-item-1128 a {
 					color: @cat-news;
 					
 					&:hover {
@@ -249,7 +258,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 					}
 				}	
 				
-				.cat-item-5 a {
+				.cat-item-113 a {
 					color: @cat-stories;
 					
 					&:hover {
@@ -257,7 +266,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 					}
 				}							
 			
-				.cat-item-8 a {
+				.cat-item-1131 a {
 					color: @cat-wellbeing;
 					
 					&:hover {
@@ -265,7 +274,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 					}
 				}
 				
-				.cat-item-7 a {
+				.cat-item-568 a {
 					color: @cat-fun;
 					
 					&:hover {
@@ -285,7 +294,7 @@ img.aligncenter {display: block; margin-right: auto; margin-left: auto;}
 aside {
 
 	&.widget {
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 		padding-bottom: 20px;
 		.border-bottom;
 	}
@@ -300,6 +309,10 @@ aside {
 		list-style: none;
 	}
 	
+	p {
+		font-style: normal;
+	}
+	
 }
 
 
@@ -312,6 +325,7 @@ article {
 	header {
 	
 		.entry-title {
+			font-size: 58px;
 			margin: 0 0 30px 0;
 			color: @grey;
 			word-break: break-word;
@@ -410,7 +424,7 @@ article {
 	.featured-img {
 		overflow: hidden;
 		margin-bottom: 20px;
-		background: @pink;
+		background: @dark;
 		background-image: url(images/icn-plus.png);
 		background-position: center center;
 		background-repeat: no-repeat;		
@@ -440,7 +454,18 @@ article {
 		
 			ul, ol {
 				margin-left: 40px;
+				list-style-position: outside;
 			}
+			
+			embed, iframe {
+				width: 100%;
+			}
+		
+		.columns {
+			img {
+				width: 100%;
+			}
+		}
 		
 	}//entry-content
 	
@@ -497,6 +522,12 @@ article {
 			float: right;
 		}
 	
+} //paging-navigation
+
+.featured-img-small {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 
@@ -538,7 +569,7 @@ article {
 			display: block;
 			overflow: hidden;
 			padding: 25px 10px;
-			background: @pink;
+			background: @dark;
 			color: #fff;
 			line-height: 29px;
 			
@@ -567,6 +598,7 @@ article {
 		
 			
 			&:hover {
+				background: @pink;
 				.box-shadow;
 				.opacity(1);
 			}
@@ -611,13 +643,182 @@ article {
 	margin-bottom: 20px;
 }
 
+// COMMENTS
+
+#comments {
+
+	#respond {
+		margin-bottom: 40px
+	}
+
+	.comments-title {
+		font-size: 18px;
+	}
+
+	label {
+		float: left;
+	}
+	
+	.form-allowed-tags {
+		display: none;
+	}
+	
+	
+	> ol {
+		list-style: none;
+		
+		article {
+			padding: 20px;
+			margin-bottom: 20px;
+			border: 1px solid @border-color;
+			
+			footer {
+				position: relative;
+				padding-left: 60px;
+				
+				cite {
+					font-style: normal;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+			
+			.comment-content {
+				margin-left: 60px;
+			}
+			
+			.reply {
+				margin-left: 60px;
+			}
+		
+			
+		}//article
+		
+		
+		.comment-author {
+			img {
+				.border-radius(50%);
+				position: absolute;
+				left: 0;
+			}
+		}
+		
+		.children {
+			list-style: none;
+		} 
+		
+	}//ol
+	
+}//comments
+
+
+/*------------------------------------- Page titles */
+
+h1.entry-title {
+	margin-top: 0;
+}
+
+.category-fun .page-title {
+	background: @cat-fun;
+	letter-spacing: 1px;
+	
+		span {
+			padding: 4px 0 0;
+			color: #fff;
+			background: transparent;
+		}
+}
+
+.category-stories .page-title {
+	background: @cat-stories;
+	letter-spacing: 1px;
+		span {
+			padding: 4px 0 0;
+			color: #fff;
+			background: transparent;
+		}	
+}
+
+.category-fashion .page-title {
+	background: @cat-fashion;
+	letter-spacing: 1px;	
+		span {
+			padding: 4px 0 0;
+			color: #fff;
+			background: transparent;
+		}	
+}
+
+.category-news .page-title {
+	background: @cat-news;
+	letter-spacing: 1px;	
+		span {
+			padding: 4px 0 0;
+			color: #fff;
+			background: transparent;
+		}	
+}
+
+.category-wellbeing .page-title {
+	background: @cat-wellbeing;
+	letter-spacing: 1px;	
+		span {
+			padding: 4px 0 0;
+			color: #fff;
+			background: transparent;
+		}	
+}
+
+.page-title {
+	color: #fff;
+	font-size: 18px;
+	background: @light-grey;
+	padding: 10px 20px;
+	margin: 0 0 40px;
+
+		span {
+			color: @grey;
+			font-weight: bold;
+			background: #fff;
+			display: inline-block;
+			padding: 8px 8px 5px;
+		}
+}
+
+/*------------------------------------- Page templates */
+
+.page-template-template-fullwidth-php {
+	
+	#primary {
+		border: none;
+		padding-right: 0;
+	}
+	
+}
+
 
 /*------------------------------------- footer */
 
 footer#colophon {
 	padding: 40px 0;
-	background: @off-white;
+	background: @dark;
 	text-align: center;
+	
+		.site-info {
+			font-size: 10px;
+			color: #fff;
+			letter-spacing: 2px;
+			text-transform: uppercase;			
+		}
+	
+		a {
+			color: @light-grey;
+		}
+	
+		.foot-logo {
+			display: block;
+			margin: 20px 0;
+		}
 }
 
 

@@ -7,9 +7,13 @@
  */
 
 get_header(); ?>
+<div class="row">
+	
+	<div class="nine columns">
+	
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
@@ -38,10 +42,12 @@ get_header(); ?>
 
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 .post .error404 .not-found -->
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+		
+	</div><!--/eight columns -->
 
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
+<?php get_sidebar(); ?>
 
+</div><!--/row -->
 <?php get_footer(); ?>

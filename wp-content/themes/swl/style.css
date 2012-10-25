@@ -31,14 +31,24 @@ h5 {
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 a {
-  color: #ef4257;
+  color: #f175d2;
   -webkit-transition: color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 a:hover {
-  color: rgba(239, 66, 87, 0.5);
+  color: rgba(241, 117, 210, 0.5);
+}
+#searchsubmit {
+  font-size: 12px;
+  background: #999999;
+  -webkit-box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#searchsubmit:hover {
+  background: #ef4257;
 }
 blockquote {
   border-color: #ef4257;
@@ -82,7 +92,7 @@ img.aligncenter {
 /*---------------------------------------------------------- Header/Top Nav */
 #masthead {
   margin-bottom: 40px;
-  border-top: 10px solid #ef4257;
+  border-top: 10px solid #202020;
   background: url(images/bg.jpg) top center no-repeat;
 }
 #masthead .site-title {
@@ -190,39 +200,39 @@ img.aligncenter {
   background: #999999;
   color: #fff;
 }
-#masthead #secondary-nav .cat-item-4 a {
+#masthead #secondary-nav .cat-item-1129 a {
   color: #979aff;
 }
-#masthead #secondary-nav .cat-item-4 a:hover {
+#masthead #secondary-nav .cat-item-1129 a:hover {
   background: #979aff;
 }
-#masthead #secondary-nav .cat-item-6 a {
-  color: #f15968;
+#masthead #secondary-nav .cat-item-1128 a {
+  color: #323134;
 }
-#masthead #secondary-nav .cat-item-6 a:hover {
-  background: #f15968;
+#masthead #secondary-nav .cat-item-1128 a:hover {
+  background: #323134;
 }
-#masthead #secondary-nav .cat-item-5 a {
+#masthead #secondary-nav .cat-item-113 a {
   color: #fe9e61;
 }
-#masthead #secondary-nav .cat-item-5 a:hover {
+#masthead #secondary-nav .cat-item-113 a:hover {
   background: #fe9e61;
 }
-#masthead #secondary-nav .cat-item-8 a {
+#masthead #secondary-nav .cat-item-1131 a {
   color: #f69ab3;
 }
-#masthead #secondary-nav .cat-item-8 a:hover {
+#masthead #secondary-nav .cat-item-1131 a:hover {
   background: #f69ab3;
 }
-#masthead #secondary-nav .cat-item-7 a {
+#masthead #secondary-nav .cat-item-568 a {
   color: #fe9e61;
 }
-#masthead #secondary-nav .cat-item-7 a:hover {
+#masthead #secondary-nav .cat-item-568 a:hover {
   background: #fe9e61;
 }
 /*---------------------------------------------------------- Sidebar */
 aside.widget {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -234,8 +244,12 @@ aside h1 {
 aside ul {
   list-style: none;
 }
+aside p {
+  font-style: normal;
+}
 /*---------------------------------------------------------- Post stuff */
 article header .entry-title {
+  font-size: 58px;
   margin: 0 0 30px 0;
   color: #565656;
   word-break: break-word;
@@ -317,7 +331,7 @@ article .post-meta .comments-link a {
 article .featured-img {
   overflow: hidden;
   margin-bottom: 20px;
-  background: #ef4257;
+  background: #202020;
   background-image: url(images/icn-plus.png);
   background-position: center center;
   background-repeat: no-repeat;
@@ -353,6 +367,14 @@ article .entry-content h2 {
 article .entry-content ul,
 article .entry-content ol {
   margin-left: 40px;
+  list-style-position: outside;
+}
+article .entry-content embed,
+article .entry-content iframe {
+  width: 100%;
+}
+article .entry-content .columns img {
+  width: 100%;
 }
 article footer.entry-meta {
   margin-bottom: 40px;
@@ -363,7 +385,7 @@ article.category-fashion .the-cat ul li a {
   background: #979aff;
 }
 article.category-news .the-cat ul li a {
-  background: #f15968;
+  background: #323134;
 }
 article.category-fun .the-cat ul li a {
   background: #fe9e61;
@@ -399,6 +421,11 @@ article.category-stories .the-cat ul li a {
 .paging-navigation .nav-next {
   float: right;
 }
+.featured-img-small {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 .post-navigation div {
   position: fixed;
   top: 45%;
@@ -426,7 +453,7 @@ article.category-stories .the-cat ul li a {
   display: block;
   overflow: hidden;
   padding: 25px 10px;
-  background: #ef4257;
+  background: #202020;
   color: #fff;
   line-height: 29px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -457,6 +484,7 @@ article.category-stories .the-cat ul li a {
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 .post-navigation div a:hover {
+  background: #ef4257;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -487,11 +515,137 @@ article.category-stories .the-cat ul li a {
 .lazysocialbuttons {
   margin-bottom: 20px;
 }
+#comments #respond {
+  margin-bottom: 40px;
+}
+#comments .comments-title {
+  font-size: 18px;
+}
+#comments label {
+  float: left;
+}
+#comments .form-allowed-tags {
+  display: none;
+}
+#comments > ol {
+  list-style: none;
+}
+#comments > ol article {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+}
+#comments > ol article footer {
+  position: relative;
+  padding-left: 60px;
+}
+#comments > ol article footer cite {
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#comments > ol article .comment-content {
+  margin-left: 60px;
+}
+#comments > ol article .reply {
+  margin-left: 60px;
+}
+#comments > ol .comment-author img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+}
+#comments > ol .children {
+  list-style: none;
+}
+/*------------------------------------- Page titles */
+h1.entry-title {
+  margin-top: 0;
+}
+.category-fun .page-title {
+  background: #fe9e61;
+  letter-spacing: 1px;
+}
+.category-fun .page-title span {
+  padding: 4px 0 0;
+  color: #fff;
+  background: transparent;
+}
+.category-stories .page-title {
+  background: #fe9e61;
+  letter-spacing: 1px;
+}
+.category-stories .page-title span {
+  padding: 4px 0 0;
+  color: #fff;
+  background: transparent;
+}
+.category-fashion .page-title {
+  background: #979aff;
+  letter-spacing: 1px;
+}
+.category-fashion .page-title span {
+  padding: 4px 0 0;
+  color: #fff;
+  background: transparent;
+}
+.category-news .page-title {
+  background: #323134;
+  letter-spacing: 1px;
+}
+.category-news .page-title span {
+  padding: 4px 0 0;
+  color: #fff;
+  background: transparent;
+}
+.category-wellbeing .page-title {
+  background: #f69ab3;
+  letter-spacing: 1px;
+}
+.category-wellbeing .page-title span {
+  padding: 4px 0 0;
+  color: #fff;
+  background: transparent;
+}
+.page-title {
+  color: #fff;
+  font-size: 18px;
+  background: #999999;
+  padding: 10px 20px;
+  margin: 0 0 40px;
+}
+.page-title span {
+  color: #565656;
+  font-weight: bold;
+  background: #fff;
+  display: inline-block;
+  padding: 8px 8px 5px;
+}
+/*------------------------------------- Page templates */
+.page-template-template-fullwidth-php #primary {
+  border: none;
+  padding-right: 0;
+}
 /*------------------------------------- footer */
 footer#colophon {
   padding: 40px 0;
-  background: #f4f4f4;
+  background: #202020;
   text-align: center;
+}
+footer#colophon .site-info {
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+footer#colophon a {
+  color: #999999;
+}
+footer#colophon .foot-logo {
+  display: block;
+  margin: 20px 0;
 }
 /*------------------------------------- Mixens */
 /*------------------------------------- extra stuf */
