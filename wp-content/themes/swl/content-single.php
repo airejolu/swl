@@ -8,9 +8,21 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="row">
+		<div class="ten columns offset-by-two">
+			<header>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
+		</div><!--/ten -->
+	</div><!-- /row -->
+
+	<div class="row">
 		<div class="two columns">
 		
 			<div class="post-meta">
+			
+				<div class="the-cat hide-for-small">
+					<?php the_category( '', TRUE); ?>
+				</div>			
 			
 				<div class="author clearfix">				
 					<div class="author-img">
@@ -22,14 +34,11 @@
 					</div><!--/author-name -->
 				</div><!--/author -->
 				
-				<div class="hide-for-small">
+				<div class="hide-for-small">					
+					
 					<time>
 						<?php the_date(); ?>
-					</time>				
-					
-					<div class="the-cat">
-						<?php the_category( '', TRUE); ?>
-					</div>
+					</time>						
 					
 					<div class="comments-link">
 						<?php comments_popup_link( __( '0 comments', 'swl' ), __( '1 comment', 'swl' ), __( '% comments', 'swl' ) ); ?>
@@ -44,14 +53,6 @@
 		</div><!--/two columns -->
 		
 		<div class="ten columns">
-		
-			<header>
-				<?php if ( is_singular() ) { ?>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-				<?php } else { ?>
-				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Link to %s', 'swl' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-				<?php } //end if/else ?>
-			</header>
 		
 			<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-summary">
@@ -79,23 +80,10 @@
 			
 			<?php endif; ?>
 		
-			<footer class="entry-meta">	
+			<footer class="author-meta">	
 
-				<div class="lazysocialbuttons" data-float="left"
-					data-buttons="google,twitter,facebook"
-					data-twshareurl="http:/blog.soworthloving.tld/" data-twtext="Check out my site"
-					data-shareurl="http://blog.soworthloving.tld/" data-fbhideflyout="false"
-					data-backgroundtype="light">
-				</div>			
 				
-				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'swl' ), __( '1 Comment', 'swl' ), __( '% Comments', 'swl' ) ); ?></span>
-				<?php endif; ?>
-		
-				<?php edit_post_link( __( 'Edit', 'swl' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
-			
-				
-			</footer><!-- .entry-meta -->
+			</footer><!-- .author-meta -->
 			
 		</div><!--/ten -->
 	</div><!--/row -->

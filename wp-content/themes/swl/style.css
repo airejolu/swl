@@ -376,6 +376,9 @@ article .entry-content iframe {
 article .entry-content .columns img {
   width: 100%;
 }
+article single .single-content {
+  margin-bottom: 0;
+}
 article footer.entry-meta {
   margin-bottom: 40px;
   padding: 20px 0;
@@ -649,6 +652,10 @@ footer#colophon .foot-logo {
 }
 /*------------------------------------- Mixens */
 /*------------------------------------- extra stuf */
+div.sharedaddy div.sd-block {
+  margin-top: 20px;
+  padding: 20px 0 10px;
+}
 /* Very large display targeting */
 @media only screen and (min-width: 1441px) {
   
