@@ -4,7 +4,7 @@ Theme URI: https://github.com/alliswell/swl
 Author: Jared Erickson
 Author URI: http://jarederickson.com
 Description: a custom theme for the clothing brand so worth loving
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -17,7 +17,7 @@ Tags:
 	@light-grey:	#999999;
 	@off-white:		#f4f4f4;
 	@pink:			#EF4257;
-	@blue:			#F175D2;
+	@blue:			#979AFF;
 	@yellow:		#FE9E61;
 	@red:			#f15968;
 
@@ -75,12 +75,12 @@ a {
 } // a
 
 #searchsubmit {
-	font-size: 12px;
 	background: @light-grey;
-	.box-shadow(0 0 0);
+	font-size: 12px;
 		&:hover {
 			background: @pink;
 		}
+	.box-shadow(0 0 0);
 }
 
 blockquote {
@@ -90,6 +90,19 @@ blockquote {
 
 .assistive-text {
 	display: none;
+}
+
+.title-break {
+	background: @off-white;
+	line-height: 1;
+	margin-bottom: 40px;
+	vertical-align: bottom;
+	
+		span {
+			color: @light-grey;
+			background: #fff;
+			padding: 5px 20px 5px 0;
+		}
 }
 
 img.alignright {float:right; margin:10px 0 1em 1em;}
@@ -325,10 +338,10 @@ article {
 	header {
 	
 		.entry-title {
-			font-size: 58px;
 			margin: 0 0 30px 0;
 			color: @grey;
 			word-break: break-word;
+			font-size: 58px;
 			
 				a {
 					color: @grey;
@@ -503,6 +516,49 @@ article {
 
 } //article 
 
+
+// post author bio 
+
+.author-bio {
+	position: relative;
+	margin-bottom: 60px;
+	
+		.author-img {
+			float: left;
+			width: 20%;
+			
+				img {
+					overflow: hidden;
+					width: 120px;
+					height: 120px;
+					.border-radius(50%);
+				}
+		}//author-img
+		
+		.author-info {
+			float: right;
+			width: 80%;
+			
+				ul a {
+					font-size: 14px;
+					background: @blue;
+					color: #fff;
+					padding: 1px 8px;
+					.animate;
+					
+						&:hover {
+							background: @light-grey;
+						}
+				}
+		}
+		
+		.author-name {
+			font-size: 18px;
+			margin: 2px 0 0;
+		}
+	
+}//author-bio 
+
 .paging-navigation {
 	margin: 40px 0;
 		
@@ -653,7 +709,7 @@ article {
 #comments {
 
 	#respond {
-		margin-bottom: 40px
+		margin-bottom: 40px;
 	}
 
 	.comments-title {
@@ -673,8 +729,8 @@ article {
 		list-style: none;
 		
 		article {
-			padding: 20px;
 			margin-bottom: 20px;
+			padding: 20px;
 			border: 1px solid @border-color;
 			
 			footer {
@@ -682,9 +738,9 @@ article {
 				padding-left: 60px;
 				
 				cite {
-					font-style: normal;
-					font-weight: bold;
 					text-transform: uppercase;
+					font-weight: bold;
+					font-style: normal;
 				}
 			}
 			
@@ -702,9 +758,9 @@ article {
 		
 		.comment-author {
 			img {
-				.border-radius(50%);
 				position: absolute;
 				left: 0;
+				.border-radius(50%);
 			}
 		}
 		
@@ -729,8 +785,8 @@ h1.entry-title {
 	
 		span {
 			padding: 4px 0 0;
-			color: #fff;
 			background: transparent;
+			color: #fff;
 		}
 }
 
@@ -739,8 +795,8 @@ h1.entry-title {
 	letter-spacing: 1px;
 		span {
 			padding: 4px 0 0;
-			color: #fff;
 			background: transparent;
+			color: #fff;
 		}	
 }
 
@@ -749,8 +805,8 @@ h1.entry-title {
 	letter-spacing: 1px;	
 		span {
 			padding: 4px 0 0;
-			color: #fff;
 			background: transparent;
+			color: #fff;
 		}	
 }
 
@@ -759,8 +815,8 @@ h1.entry-title {
 	letter-spacing: 1px;	
 		span {
 			padding: 4px 0 0;
-			color: #fff;
 			background: transparent;
+			color: #fff;
 		}	
 }
 
@@ -769,24 +825,24 @@ h1.entry-title {
 	letter-spacing: 1px;	
 		span {
 			padding: 4px 0 0;
-			color: #fff;
 			background: transparent;
+			color: #fff;
 		}	
 }
 
 .page-title {
+	margin: 0 0 40px;
+	padding: 10px 20px;
+	background: @light-grey;
 	color: #fff;
 	font-size: 18px;
-	background: @light-grey;
-	padding: 10px 20px;
-	margin: 0 0 40px;
 
 		span {
-			color: @grey;
-			font-weight: bold;
-			background: #fff;
 			display: inline-block;
 			padding: 8px 8px 5px;
+			background: #fff;
+			color: @grey;
+			font-weight: bold;
 		}
 }
 
@@ -795,8 +851,8 @@ h1.entry-title {
 .page-template-template-fullwidth-php {
 	
 	#primary {
-		border: none;
 		padding-right: 0;
+		border: none;
 	}
 	
 }
@@ -810,10 +866,10 @@ footer#colophon {
 	text-align: center;
 	
 		.site-info {
-			font-size: 10px;
 			color: #fff;
+			text-transform: uppercase;
 			letter-spacing: 2px;
-			text-transform: uppercase;			
+			font-size: 10px;			
 		}
 	
 		a {

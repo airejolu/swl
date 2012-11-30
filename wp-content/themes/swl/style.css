@@ -4,7 +4,7 @@ Theme URI: https://github.com/alliswell/swl
 Author: Jared Erickson
 Author URI: http://jarederickson.com
 Description: a custom theme for the clothing brand so worth loving
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -31,18 +31,18 @@ h5 {
   font-family: 'Nexa Light', Helvetica, Arial, Sans-Serif;
 }
 a {
-  color: #f175d2;
+  color: #979aff;
   -webkit-transition: color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 a:hover {
-  color: rgba(241, 117, 210, 0.5);
+  color: rgba(151, 154, 255, 0.5);
 }
 #searchsubmit {
-  font-size: 12px;
   background: #999999;
+  font-size: 12px;
   -webkit-box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 0 5px rgba(0, 0, 0, 0.2);
@@ -56,6 +56,17 @@ blockquote {
 }
 .assistive-text {
   display: none;
+}
+.title-break {
+  background: #f4f4f4;
+  line-height: 1;
+  margin-bottom: 40px;
+  vertical-align: bottom;
+}
+.title-break span {
+  color: #999999;
+  background: #fff;
+  padding: 5px 20px 5px 0;
 }
 img.alignright {
   float: right;
@@ -249,10 +260,10 @@ aside p {
 }
 /*---------------------------------------------------------- Post stuff */
 article header .entry-title {
-  font-size: 58px;
   margin: 0 0 30px 0;
   color: #565656;
   word-break: break-word;
+  font-size: 58px;
 }
 article header .entry-title a {
   color: #565656;
@@ -399,6 +410,43 @@ article.category-wellbeing .the-cat ul li a {
 article.category-stories .the-cat ul li a {
   background: #fe9e61;
 }
+.author-bio {
+  position: relative;
+  margin-bottom: 60px;
+}
+.author-bio .author-img {
+  float: left;
+  width: 20%;
+}
+.author-bio .author-img img {
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.author-bio .author-info {
+  float: right;
+  width: 80%;
+}
+.author-bio .author-info ul a {
+  font-size: 14px;
+  background: #979aff;
+  color: #fff;
+  padding: 1px 8px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.author-bio .author-info ul a:hover {
+  background: #999999;
+}
+.author-bio .author-name {
+  font-size: 18px;
+  margin: 2px 0 0;
+}
 .paging-navigation {
   margin: 40px 0;
 }
@@ -534,8 +582,8 @@ article.category-stories .the-cat ul li a {
   list-style: none;
 }
 #comments > ol article {
-  padding: 20px;
   margin-bottom: 20px;
+  padding: 20px;
   border: 1px solid #e1e1e1;
 }
 #comments > ol article footer {
@@ -543,9 +591,9 @@ article.category-stories .the-cat ul li a {
   padding-left: 60px;
 }
 #comments > ol article footer cite {
-  font-style: normal;
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
+  font-style: normal;
 }
 #comments > ol article .comment-content {
   margin-left: 60px;
@@ -554,11 +602,11 @@ article.category-stories .the-cat ul li a {
   margin-left: 60px;
 }
 #comments > ol .comment-author img {
+  position: absolute;
+  left: 0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  position: absolute;
-  left: 0;
 }
 #comments > ol .children {
   list-style: none;
@@ -573,8 +621,8 @@ h1.entry-title {
 }
 .category-fun .page-title span {
   padding: 4px 0 0;
-  color: #fff;
   background: transparent;
+  color: #fff;
 }
 .category-stories .page-title {
   background: #fe9e61;
@@ -582,8 +630,8 @@ h1.entry-title {
 }
 .category-stories .page-title span {
   padding: 4px 0 0;
-  color: #fff;
   background: transparent;
+  color: #fff;
 }
 .category-fashion .page-title {
   background: #979aff;
@@ -591,8 +639,8 @@ h1.entry-title {
 }
 .category-fashion .page-title span {
   padding: 4px 0 0;
-  color: #fff;
   background: transparent;
+  color: #fff;
 }
 .category-news .page-title {
   background: #323134;
@@ -600,8 +648,8 @@ h1.entry-title {
 }
 .category-news .page-title span {
   padding: 4px 0 0;
-  color: #fff;
   background: transparent;
+  color: #fff;
 }
 .category-wellbeing .page-title {
   background: #f69ab3;
@@ -609,27 +657,27 @@ h1.entry-title {
 }
 .category-wellbeing .page-title span {
   padding: 4px 0 0;
-  color: #fff;
   background: transparent;
+  color: #fff;
 }
 .page-title {
+  margin: 0 0 40px;
+  padding: 10px 20px;
+  background: #999999;
   color: #fff;
   font-size: 18px;
-  background: #999999;
-  padding: 10px 20px;
-  margin: 0 0 40px;
 }
 .page-title span {
-  color: #565656;
-  font-weight: bold;
-  background: #fff;
   display: inline-block;
   padding: 8px 8px 5px;
+  background: #fff;
+  color: #565656;
+  font-weight: bold;
 }
 /*------------------------------------- Page templates */
 .page-template-template-fullwidth-php #primary {
-  border: none;
   padding-right: 0;
+  border: none;
 }
 /*------------------------------------- footer */
 footer#colophon {
@@ -638,10 +686,10 @@ footer#colophon {
   text-align: center;
 }
 footer#colophon .site-info {
-  font-size: 10px;
   color: #fff;
-  letter-spacing: 2px;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
 }
 footer#colophon a {
   color: #999999;
